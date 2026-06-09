@@ -378,53 +378,53 @@
 //                         crossAxisAlignment: CrossAxisAlignment.end,
 //                         children: [
 //                           Expanded(
-//                             child: TextField(
-//                               onChanged: (value) => {
-//                       setState(() {
-//                         widget.textController.text = value;
-//                       }),
-//                     },
-//                               controller: widget.textController,
-//                               maxLines: 5,
-//                               minLines: 1,
-//                               style: const TextStyle(
-//                                 fontFamily: 'Cairo',
-//                                 fontSize: 15,
-//                               ),
-//                               textDirection: Directionality.of(context),
-//                               decoration: InputDecoration(
-//                                 hintText: _isListening
-//                                     ? 'Speak now...'
-//                                     : 'Ask anything medical...',
-//                                 hintStyle: TextStyle(
-//                                   color: Colors.grey.shade400,
-//                                   fontSize: 14,
-//                                 ),
-//                                 // border: InputBorder.none,
-//                                  enabledBorder: OutlineInputBorder(
-//                         borderRadius: BorderRadius.circular(12),
-//                         borderSide: const BorderSide(
-//                           color: AppColors.navBorder,
-//                         ),
-//                       ),
-//                       border: OutlineInputBorder(
-//                         borderRadius: BorderRadius.circular(12),
-//                         borderSide: const BorderSide(
-//                           color: AppColors.navBorder,
-//                         ),
-//                       ),
-//                       focusedBorder: OutlineInputBorder(
-//                         borderRadius: BorderRadius.circular(12),
-//                         borderSide: const BorderSide(color: AppColors.primary),
-//                       ),
+                    //         child: TextField(
+                    //           onChanged: (value) => {
+                    //   setState(() {
+                    //     widget.textController.text = value;
+                    //   }),
+                    // },
+                    //           controller: widget.textController,
+                    //           maxLines: 5,
+                    //           minLines: 1,
+                    //           style: const TextStyle(
+                    //             fontFamily: 'Cairo',
+                    //             fontSize: 15,
+                    //           ),
+                    //           textDirection: Directionality.of(context),
+                    //           decoration: InputDecoration(
+                    //             hintText: _isListening
+                    //                 ? 'Speak now...'
+                    //                 : 'Ask anything medical...',
+                    //             hintStyle: TextStyle(
+                    //               color: Colors.grey.shade400,
+                    //               fontSize: 14,
+                    //             ),
+                    //             // border: InputBorder.none,
+                    //              enabledBorder: OutlineInputBorder(
+                    //     borderRadius: BorderRadius.circular(12),
+                    //     borderSide: const BorderSide(
+                    //       color: AppColors.navBorder,
+                    //     ),
+                    //   ),
+                    //   border: OutlineInputBorder(
+                    //     borderRadius: BorderRadius.circular(12),
+                    //     borderSide: const BorderSide(
+                    //       color: AppColors.navBorder,
+                    //     ),
+                    //   ),
+                    //   focusedBorder: OutlineInputBorder(
+                    //     borderRadius: BorderRadius.circular(12),
+                    //     borderSide: const BorderSide(color: AppColors.primary),
+                    //   ),
 
-//                                 contentPadding: const EdgeInsets.symmetric(
-//                                   horizontal: 16,
-//                                   vertical: 12,
-//                                 ),
-//                               ),
-//                             ),
-//                           ),
+                    //             contentPadding: const EdgeInsets.symmetric(
+                    //               horizontal: 16,
+                    //               vertical: 12,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ),
 
 //                           // Mic button
 //                           _CircleIconButton(
@@ -755,6 +755,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:my_smart_pro_app/features/chat/domain/chat_message.dart';
 import 'package:my_smart_pro_app/features/chat/presentation/controller/chat_controller.dart';
+import 'package:my_smart_pro_app/src/resourses/color_manager/app_colors.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
@@ -1326,7 +1327,7 @@ class _ChatInputBarState extends ConsumerState<ChatInputBar>
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.grey.shade100,
-                        borderRadius: BorderRadius.circular(24),
+                        borderRadius: BorderRadius.circular(12),
                         border: Border.all(
                           color: _isListening
                               ? Colors.red.shade300
@@ -1338,33 +1339,57 @@ class _ChatInputBarState extends ConsumerState<ChatInputBar>
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Expanded(
-                            child: TextField(
+                            child: 
+
+                            TextField(
+                              onChanged: (value) => {
+                      setState(() {
+                        widget.textController.text = value;
+                      }),
+                    },
                               controller: widget.textController,
                               maxLines: 5,
                               minLines: 1,
                               style: const TextStyle(
+                                fontFamily: 'Cairo',
                                 fontSize: 15,
-                                height: 1.4,
                               ),
+                              textDirection: Directionality.of(context),
                               decoration: InputDecoration(
                                 hintText: _isListening
-                                    ? 'Listening...'
+                                    ? 'Speak now...'
                                     : 'Ask anything medical...',
                                 hintStyle: TextStyle(
-                                  color: _isListening
-                                      ? Colors.red.shade300
-                                      : Colors.grey.shade400,
+                                  color: Colors.grey.shade400,
                                   fontSize: 14,
                                 ),
-                                border: InputBorder.none,
+                                // border: InputBorder.none,
+                                 enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: const BorderSide(
+                          color: AppColors.navBorder,
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: const BorderSide(
+                          color: AppColors.navBorder,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: const BorderSide(color: AppColors.primary),
+                      ),
+
                                 contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 16,
                                   vertical: 12,
                                 ),
                               ),
-                              onChanged: (_) => setState(() {}),
                             ),
                           ),
+                           
+                          
 
                           // Mic button inside field
                           Padding(
